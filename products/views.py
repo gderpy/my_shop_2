@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404
+from django.template.defaultfilters import register
+from django.http import HttpResponse
 from .models import Product, Category
 
 
@@ -25,3 +27,5 @@ def catalog(request, cat_slug):
     }
 
     return render(request, "products/cat_catalog.html", context=data)
+
+

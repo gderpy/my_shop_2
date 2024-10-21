@@ -28,3 +28,17 @@ header a {
     max-height: 100%;
     object-fit: contain;
 }
+
+.product-list-image-card {
+    background-color: white;
+    height: 170px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-list-image-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
