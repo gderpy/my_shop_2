@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.utils.text import slugify
 from .models import Product, Category
 
+# SimpleListFilter - https://docs.djangoproject.com/en/5.1/ref/contrib/admin/filters/
 
 class HasParentFilter(admin.SimpleListFilter):
     title = "Тип категории"
@@ -64,11 +65,12 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ("pid", "name", "price", "is_available", "created_at", "category")
+    list_display = ("name", "price", "is_available", "created_at", "category")
     list_filter = ("name", "is_available", "created_at", "category")
     search_fields = ("name", "category")
     ordering = ("-created_at",)
     list_per_page = 50
+    prepopulated_fields = {"slug": ("name",)}
 
 
     
