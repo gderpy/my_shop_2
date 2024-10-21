@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ product.category.name }}: {{product.name}}{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="card d-flex flex-row">
+            <div class="product-detail-image me-5">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
+            <div class="product-info d-flex flex-column">
+                <span class="fs-5">{{ product.name }}</span>
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}

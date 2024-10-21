@@ -15,7 +15,7 @@
                         <div class="product-list-image-card">
                             <img src="{{ product.image.url }}" alt="{{ product.name }}">
                         </div>
-                        <span class="ms-3"><strong>{{ product.name }}</strong></span>
+                        <a href="{{ product.get_absolute_url }}" class="ms-3"><strong>{{ product.name }}</strong></a>
                         <div class="liked-product ms-auto d-flex flex-column align-items-center gap-2">
                             <span class="ms-auto"><strong>{{ product.price|price_format }} ₽</strong></span>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">

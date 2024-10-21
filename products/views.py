@@ -29,3 +29,13 @@ def catalog(request, cat_slug):
     return render(request, "products/cat_catalog.html", context=data)
 
 
+def product_detail(request, product_slug):
+    product = get_object_or_404(Product, slug=product_slug)
+
+    data = {
+        "product": product,
+    }
+
+    return render(request, "products/product_detail.html", context=data)
+
+
