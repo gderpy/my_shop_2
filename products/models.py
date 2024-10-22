@@ -71,3 +71,6 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse("products:product_detail", kwargs={"product_slug": str(self.slug)})
