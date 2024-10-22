@@ -1,3 +1,17 @@
+.main-navbar {
+    margin-bottom: 123.88px;
+}
+
+.secondary-navbar {
+    margin-bottom: 67.88px;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
 a {
     text-decoration: none;
 }
