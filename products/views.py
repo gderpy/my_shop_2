@@ -18,16 +18,16 @@ def categories(request):
     return render(request, "products/categories.html", context=data)
 
 
-def catalog(request, cat_slug):
+def category_detail(request, cat_slug):
     category = get_object_or_404(Category, slug=cat_slug)
-    list_product = category.products.all()  # Используем related_name и Product
 
-    data = {
-        "products": list_product,
-    }
-
-    return render(request, "products/cat_catalog.html", context=data)
-
+    if category.children.exists():
+        subcategories = category.children.all()
+        return render(request, "products/categories.html", context={"categories": subcategories})  
+    else:
+        products = category.products.all()
+        return render(request, "products/cat_catalog.html", context={"products": products})
+        
 
 def product_detail(request, product_slug):
     product = get_object_or_404(Product, slug=product_slug)

@@ -5,13 +5,13 @@
 {% block content %}
     <div class="container">
         <div class="d-flex flex-wrap gap-5 justify-content-center mt-5">
-            {% for cat in categories %}
+            {% for cat in categories %}                
                 <a href="{{ cat.get_absolute_url }}" class="card d-flex justify-content-center align-items-center gap-3 text-center p-3" style="width: 18rem;">
                     <div class="cat-img d-flex justify-content-center mt-2">
                         <img src="{{ cat.image.url }}" class="card-img-top" alt="...">
                     </div>
                     <span class=""><strong>{{ cat.name }}</strong></span>
-                </a>
+                </a>           
             {% endfor %}
         </div>
     </div>
