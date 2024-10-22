@@ -3,15 +3,47 @@
 {% block title %}{{ product.category.name }}: {{product.name}}{% endblock %}
 
 {% block content %}
-    <div class="container mt-4">
-        <div class="card d-flex flex-row">
-            <div class="product-detail-image me-5">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Фото товара -->
+            <div class="col-md-6">
+                <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
             </div>
-            <div class="product-info d-flex flex-column">
-                <span class="fs-5">{{ product.name }}</span>
-                
+
+            <!-- Информация о товаре -->
+            <div class="col-md-6 d-flex flex-column justify-content-between">
+                <div>
+                    <h1>{{ product.name }}</h1>
+                    <p class="text-muted">{{ product.description }}</p>
+                </div>
+
+                <!-- Кнопки "В избранное" и "Добавить в корзину" -->
+                <div class="mt-4">
+                    <button class="btn btn-outline-primary me-2">Добавить в избранное</button>
+                    <button class="btn btn-primary">Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Отзывы -->
+        <div class="mt-5">
+            <h3>Отзывы</h3>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Отличный товар!</h5>
+                    <p class="card-text">Очень доволен покупкой. Качество на высоте!</p>
+                    <p class="card-text"><small class="text-muted">Опубликовано 3 дня назад</small></p>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Неплохой товар</h5>
+                    <p class="card-text">Хороший товар, но доставка была долгой.</p>
+                    <p class="card-text"><small class="text-muted">Опубликовано неделю назад</small></p>
+                </div>
             </div>
         </div>
     </div>
+    
 {% endblock %}
