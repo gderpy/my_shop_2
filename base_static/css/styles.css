@@ -27,6 +27,18 @@ footer i {
     color: white;
 }
 
+.user-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.user-buttons a {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 header a {
     color: white;
 }
